@@ -28,29 +28,21 @@ Download wind speed data browser (https://gml.noaa.gov/aftp/data/meteorology/in-
 We provide scripts to train the model across the full range of hyperparameters used in our study.
 The training module is designed to iterate through the complete hyperparameter space to replicate the results reported in the paper.
 
-'''
+```
 sh scripts.sh
-'''
+```
 
-## Model Test
-'''
-python test.py --data brw --pred_len 24
-'''
-
-​
 ## Evaluation & Analysis
 The evaluation process is handled in two ways:
 
 Quick Test: A simplified testing script is provided for a fast sanity check of the model performance.
+
+```
+python test.py --data brw --pred_len 24
+```
 
 Full Benchmark Analysis: For our actual research findings, we followed a more rigorous process:
 
   Test results from all benchmarks are exported and saved as numpy (.npy) files.
 
   Each metric is then calculated independently from these saved raw outputs to ensure precision and consistency across different evaluation environments.
-
-
-📂 Repository Structure
-data/: Scripts for data downloading and preprocessing.
-train.py: Main entry point for training (supports full hyperparameter sweeps).
-test.py: Simplified evaluation script.
