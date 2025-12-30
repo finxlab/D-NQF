@@ -35,7 +35,7 @@ logging.basicConfig(
     level=logging.DEBUG,
     datefmt='%m/%d/%Y %I:%M:%S %p',
 )
-logger = logging.getLogger('Timemixer.Train')
+logger = logging.getLogger('DNQF.Train')
 
 LOSS_DICT = {
     "ND": ND,
@@ -48,7 +48,6 @@ LOSS_DICT = {
     "MAE": MAE,
     "MSPE": MSPE,
     "MAPE": MAPE,
-    "Rsquare": Rsquare
     }
 
 
@@ -219,7 +218,7 @@ def train_and_evaluate(model: nn.Module,
 
 
         # Evaluate Model
-        summary_val = evaluate(model, val_set, validation_loader, configs, loss_type =["ND", "NRMSE", "Rsquare", "CRPS", "QLOSS", "ECRPS", "QCL", "MSE", "MAE", "MSPE", "MAPE"])
+        summary_val = evaluate(model, val_set, validation_loader, configs, loss_type =["CRPS", "QLOSS", "ECRPS", "QCL", "MSE", "MAE", "MSPE", "MAPE"])
 
         evaluation_summary[epoch] = summary_val
 
