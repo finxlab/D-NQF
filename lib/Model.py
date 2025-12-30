@@ -55,7 +55,7 @@ class DLinear(nn.Module):
     """DLinear
 
     Args:
-        configs : c_out, seq_len, pred_len
+        configs : moving_avg, seq_len, pred_len
     References:
         - [Zeng, Ailing, et al. "Are transformers effective for time series forecasting?." Proceedings of the AAAI conference on artificial intelligence. Vol. 37. No. 9. 2023."](https://ojs.aaai.org/index.php/AAAI/article/view/27695)
     """
