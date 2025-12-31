@@ -63,13 +63,6 @@ def MSE(prediction_samples, labels):
     median_pred = prediction_samples[:, :, index:index+1]
     return np.sum((median_pred - labels) ** 2), N * T
 
-def Rsquare(prediction_samples, labels): # XXXX not appropriate
-    N, T,_ = labels.shape
-    # median_pred = np.quantile(prediction_samples, 0.5, axis=-1, keepdims = True)
-    index = int(200 * 0.5 - 1)
-    median_pred = prediction_samples[:, :, index:index+1]
-    return np.sum((median_pred - labels) ** 2) / np.sum((np.mean(labels) - labels)**2), 1
-
 def MAE(prediction_samples, labels):
     N, T,_ = labels.shape
     # median_pred = np.quantile(prediction_samples, 0.5, axis=-1, keepdims = True)
